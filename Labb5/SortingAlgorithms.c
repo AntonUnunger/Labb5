@@ -9,9 +9,9 @@ int isImplemented(SortingAlgorithm algorithm)
 {
 	switch (algorithm)
 	{
-//      case BUBBLE_SORT:
+      case BUBBLE_SORT:
 //      case INSERTION_SORT:
-//      case SELECTION_SORT:
+      case SELECTION_SORT:
 //      case QUICK_SORT:
       case MERGE_SORT:
             return 1;
@@ -26,6 +26,19 @@ int isImplemented(SortingAlgorithm algorithm)
 
 static void bubbleSort(ElementType* arrayToSort, size_t size, Statistics* statistics)
 {
+	int swapped = 1;
+	while (lessThan(0, swapped, statistics))
+	{
+		swapped = 0;
+		for (int i = 0; lessThan(i, size - 1, statistics); i++)
+		{
+			if (lessThan(arrayToSort[i + 1], arrayToSort[i], statistics))
+			{
+				swapped++;
+				swapElements(&arrayToSort[i + 1], &arrayToSort[i], statistics);
+			}
+		}
+	}
 }
 
 static void insertionSort(ElementType* arrayToSort, size_t size, Statistics* statistics)
@@ -34,6 +47,16 @@ static void insertionSort(ElementType* arrayToSort, size_t size, Statistics* sta
 
 static void selectionSort(ElementType* arrayToSort, size_t size, Statistics* statistics)
 {
+	for (int i = 0; lessThan(i, size - 1, statistics); i++)
+	{
+		for (int j = i + 1; lessThan(j, size, statistics); j++)
+		{
+			if (lessThan(arrayToSort[j], arrayToSort[i], statistics))
+			{
+				swapElements(&arrayToSort[i], &arrayToSort[j], statistics);
+			}
+		}
+	}
 }
 
 static void merge(ElementType* arrayToSort, int low, int middle, int high, Statistics* statistics)
