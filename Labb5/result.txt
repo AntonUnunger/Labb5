@@ -1,0 +1,19 @@
+---------------------------------------------
+--------         Merge sort         ---------
+---------------------------------------------
+
+Osorterat: 
+  10 element:   200 jämförelser,     0 byten
+  20 element:   481 jämförelser,     0 byten
+  40 element:  1096 jämförelser,     0 byten
+
+Sorterat: 
+  10 element:   193 jämförelser,     0 byten
+  20 element:   433 jämförelser,     0 byten
+  40 element:   969 jämförelser,     0 byten
+
+Bakåtsorterat: 
+  10 element:   204 jämförelser,     0 byten
+  20 element:   461 jämförelser,     0 byten
+  40 element:  1036 jämförelser,     0 byten
+
