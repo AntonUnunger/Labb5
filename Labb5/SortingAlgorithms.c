@@ -68,11 +68,11 @@ static void merge(ElementType* arrayToSort, int low, int middle, int high, Stati
 
 	for (int i = 0; lessThan(i, lowSize, statistics); i++)
 	{
-		tempLow[i] = arrayToSort[low + i];
+		swapElements(&tempLow[i], &arrayToSort[low + i], statistics);
 	}
 	for (int i = 0; lessThan(i, highSize, statistics); i++)
 	{
-		tempHigh[i] = arrayToSort[middle + 1 + i];
+		swapElements(&tempHigh[i], &arrayToSort[middle + 1 + i], statistics);
 	}
 
 
@@ -83,25 +83,25 @@ static void merge(ElementType* arrayToSort, int low, int middle, int high, Stati
 	{
 		if (lessThanOrEqualTo(tempLow[lowI], tempHigh[highI], statistics))
 		{
-			arrayToSort[I] = tempLow[lowI];
+			swapElements(&arrayToSort[I], &tempLow[lowI], statistics);
 			lowI++;
 		}
 		else
 		{
-			arrayToSort[I] = tempHigh[highI];
+			swapElements(&arrayToSort[I], &tempHigh[highI], statistics);
 			highI++;
 		}
 		I++;
 	}
 	while (lessThan(lowI, lowSize, statistics))
 	{
-		arrayToSort[I] = tempLow[lowI];
+		swapElements(&arrayToSort[I], &tempLow[lowI], statistics);
 		I++;
 		lowI++;
 	}
 	while (lessThan(highI, highSize, statistics))
 	{
-		arrayToSort[I] = tempHigh[highI];
+		swapElements(&arrayToSort[I], &tempHigh[highI], statistics);
 		I++;
 		highI++;
 	}
